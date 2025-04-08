@@ -1,5 +1,3 @@
-
-
 type ActionType = 'option' | 'content' | 'status' | 'none';
 type StatusCode = 'loading' | 'markAsDone' | 'isAvaMarkAsDone' | 'error' | 'stop' | 'ready';
 
@@ -101,4 +99,3 @@ export const runtime: RuntimeModel = {
         return () => chrome.runtime.onMessage.removeListener(handleStorageChanges);
     }
 };
-
