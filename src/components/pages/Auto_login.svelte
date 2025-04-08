@@ -17,8 +17,10 @@
     loading = true;
     try {
       await storage.set(data);
+      msg = "Auto-login mode updated";
     } catch (e) {
       log.error(e);
+      msg = "Failed to update auto-login mode";
     } finally {
       loading = false;
     }
@@ -33,13 +35,14 @@
   ) {
     e.preventDefault();
 
-    log.info("Saveing account");
+    log.info("Saving account");
     try {
       loading = true;
       await storage.set(data);
-      msg = "Saved account credensial";
+      msg = "Saved account credentials";
     } catch (e) {
       log.error(e);
+      msg = "Failed to save account credentials";
     } finally {
       loading = false;
     }
@@ -50,9 +53,10 @@
       loading = true;
       await storage.set(DEFAULT_STORAGE);
       data = DEFAULT_STORAGE;
-      msg = "Cleared account credensial";
+      msg = "Cleared account credentials";
     } catch (e) {
       log.error(e);
+      msg = "Failed to clear account credentials";
     } finally {
       loading = false;
     }
